@@ -1,0 +1,35 @@
+/* div {
+    border: 1px solid coral;
+} */
+
+
+header {
+     height: 20vh;
+}
+
+main {
+    height: 70vh;
+}
+
+footer {
+    height: 10vh;
+}
+.raw {
+    display: flex;
+}
+.raw>div {
+    height:2vw;
+    width:2vw;
+   border: 1px solid rgba(0, 0, 0, 0.527);
+    /* flex:1; */
+
+}
+
+.container>div>div:hover {
+   background-color: aqua;
+}
+
+.container { 
+    display: flex;
+    flex-direction: column;
+}
