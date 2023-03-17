@@ -2,34 +2,36 @@
     border: 1px solid coral;
 } */
 
-
 header {
-     height: 20vh;
+    display: flex;
+    justify-content: center;
+}
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-main {
-    height: 70vh;
-}
-
-footer {
-    height: 10vh;
-}
 .raw {
     display: flex;
+    flex:1;
 }
 .raw>div {
-    height:2vw;
-    width:2vw;
+   
    border: 1px solid rgba(0, 0, 0, 0.527);
-    /* flex:1; */
+    flex:1;
 
 }
 
 .container>div>div:hover {
-   background-color: aqua;
+   background-color: rgba(144, 151, 151, 0.381);
+   cursor: crosshair;
 }
 
 .container { 
     display: flex;
     flex-direction: column;
+    width: 40vw;
+    height: 40vw;
 }
+
