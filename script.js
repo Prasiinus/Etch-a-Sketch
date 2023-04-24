@@ -36,13 +36,23 @@ function board(size) {
 }
 
 function color(pixel) {
-    pixel.addEventListener("mousedown", makeRed);
+    pixel.addEventListener("mousedown", crayon);
     pixel.addEventListener("mouseover", event => {
-        if (event.buttons == 1) makeRed(event);
+        if (event.buttons == 1) crayon(event);
     });
 }
 
-function makeRed(event) {
-    event.target.style.backgroundColor = 'red';
-}
+let shade ='red';
 
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+     shade = button.id;
+     console.log('shade ='+shade+' bouton.id ='+button.id)
+     crayon(shade);
+    });
+});
+
+function crayon(event) {
+    event.target.style.backgroundColor = shade;
+}
