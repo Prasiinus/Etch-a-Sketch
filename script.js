@@ -4,6 +4,7 @@ const inputvalue = document.querySelector('.inputvalue')
 
 const validsize = [8, 16, 32, 64];
 const defaultvalue = validsize[range.value];
+
 let shade='black';
 
 board(defaultvalue);
@@ -11,7 +12,7 @@ inputvalue.textContent = defaultvalue + 'x' + defaultvalue;
 
 range.addEventListener("click", function (e) {
     let size = validsize[this.value];
-    inputvalue.textContent = `${size}x${size}`;;
+    inputvalue.textContent = `${size}x${size}`;
     board(size);
 });
 
@@ -65,6 +66,24 @@ function clean()
     pixels.forEach(pixel => {
         pixel.style.backgroundColor = 'white'});
 }
+
+
+const quadrillage = document.querySelector('#quadri')
+quadrillage.addEventListener('click', () => {   
+        const pixels = document.querySelectorAll('.pix')
+         pixels.forEach(pixel => {
+            if(pixel.style.border = 'white')
+            { pixel.style.border = 'black'}
+            else
+            {pixel.style.border = 'white'}
+            })
+    
+})
+
+
+
+
+
 
 const downloadBtn = document.querySelector('#download');
 downloadBtn.addEventListener('click', () => {

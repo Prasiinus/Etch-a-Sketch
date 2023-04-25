@@ -16,9 +16,9 @@ header {
     display: flex;
     flex:1;
 }
-.raw>div {
+.pix {
    
-   border: 1px solid rgba(0, 0, 0, 0.527);
+    border: 1px solid rgba(0, 0, 0, 0.527);
     flex:1;
 
 }
@@ -33,5 +33,6 @@ header {
     flex-direction: column;
     width: 40vw;
     height: 40vw;
+    border: 1px solid rgba(0, 0, 0, 0.527);
 }
 
