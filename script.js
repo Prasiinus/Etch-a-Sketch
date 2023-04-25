@@ -29,11 +29,13 @@ function board(size) {
             const pixel = document.createElement('div');
             pixel.setAttribute('class', 'pix')
             raw.appendChild(pixel);
-            color(pixel)
+            color(pixel);
         }
     }
 
 }
+
+
 
 function color(pixel) {
     pixel.addEventListener("mousedown", crayon);
@@ -42,17 +44,19 @@ function color(pixel) {
     });
 }
 
-let shade ='red';
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-     shade = button.id;
-     console.log('shade ='+shade+' bouton.id ='+button.id)
-     crayon(shade);
-    });
-});
+
+let shade ='red';
 
 function crayon(event) {
     event.target.style.backgroundColor = shade;
 }
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+    shade = button.id;   
+    });
+});
+
+
