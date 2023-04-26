@@ -1,32 +1,44 @@
-/* div {
+/* * {
     border: 1px solid coral;
 } */
 
 header {
     display: flex;
     justify-content: center;
+    
+}
+body 
+{
+    height: 100vh;
+    margin: 0;
 }
 .dashboard {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: greenyellow;
+    border-radius: 20px;
+    /* padding: 10px; */
 }
 
 .raw {
     display: flex;
     flex:1;
 }
-.pix {
-   
-    border: 1px solid rgba(0, 0, 0, 0.527);
-    flex:1;
 
+.raw>div
+{
+    flex:1;
+}
+.pix {
+    border: 1px solid rgba(0, 0, 0, 0.527);
 }
 
 .container>div>div:hover {
-   background-color: rgba(144, 151, 151, 0.381);
+   background-color: rgba(86, 230, 230, 0.381);
    cursor: crosshair;
 }
+
 
 .container { 
     display: flex;
@@ -36,3 +48,10 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.527);
 }
 
+.ddl 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}

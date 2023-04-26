@@ -5,7 +5,7 @@ const inputvalue = document.querySelector('.inputvalue')
 const validsize = [8, 16, 32, 64];
 const defaultvalue = validsize[range.value];
 
-let shade='black';
+let shade = 'black';
 
 board(defaultvalue);
 inputvalue.textContent = defaultvalue + 'x' + defaultvalue;
@@ -18,7 +18,7 @@ range.addEventListener("click", function (e) {
 
 
 function board(size) {
-    
+
     while (Container.firstChild) {
         Container.removeChild(Container.firstChild);
     }
@@ -46,39 +46,49 @@ function color(pixel) {
 }
 
 
-function crayon(event) { 
+function crayon(event) {
     event.target.style.backgroundColor = shade;
 }
 
 const buttons = document.querySelectorAll('.button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-         shade = button.id;
+        shade = button.id;
     });
 });
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', clean)
 
-function clean() 
-{
+function clean() {
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
-        pixel.style.backgroundColor = 'white'});
+        pixel.style.backgroundColor = 'white'
+      
+    });
 }
 
 
 const quadrillage = document.querySelector('#quadri')
-quadrillage.addEventListener('click', () => {   
-        const pixels = document.querySelectorAll('.pix')
-         pixels.forEach(pixel => {
-            if(pixel.style.border = 'white')
-            { pixel.style.border = 'black'}
-            else
-            {pixel.style.border = 'white'}
-            })
+quadrillage.addEventListener('click', () => {
     
-})
+    const pixels = document.querySelectorAll('.pix')
+    pixels.forEach(pixel => {
+        if (pixel.style.border == '1px solid white') {
+            pixel.style.border = '1px solid rgba(0, 0, 0, 0.527)'
+            quadrillage.innerHTML='Quadrillage : On'
+          
+        }
+        else {
+            pixel.style.border='1px solid white';
+            quadrillage.innerHTML='Quadrillage : Off'
+        
+        }
+    });
+ 
+    })
+
+
 
 
 
@@ -89,9 +99,9 @@ const downloadBtn = document.querySelector('#download');
 downloadBtn.addEventListener('click', () => {
     const canvas = document.createElement('canvas');
     const container = document.querySelector('.container');
-    const containerRect = container.getBoundingClientRect(); 
+    const containerRect = container.getBoundingClientRect();
     // Ces deux lignes sélectionnent l'élément "container"  et récupèrent sa taille et sa position sur la page.
-    
+
     const pixelSize = containerRect.width / container.children.length;
     // Cette ligne calcule la taille en pixels de chaque pixel dans la grille en divisant la largeur du
     //  conteneur par le nombre de pixels dans une rangée.
@@ -109,7 +119,7 @@ downloadBtn.addEventListener('click', () => {
             // Ces deux lignes utilisent la méthode "Array.from" pour convertir les nœuds enfants de "container" en un tableau d'éléments DOM.
             //  Ensuite, deux boucles imbriquées sont utilisées pour parcourir chaque pixel dans la grille.
 
-            const { backgroundColor } = pixel.style;
+            const { backgroundColor } = pixel.style
             // Cette ligne récupère la couleur de fond du pixel en cours de traitement.
 
             const x = colIndex * pixelSize;
