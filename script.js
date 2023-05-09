@@ -6,6 +6,7 @@ const validsize = [8, 16, 32, 64];
 const defaultvalue = validsize[range.value];
 
 let shade = 'black';
+let pattern;
 
 board(defaultvalue);
 inputvalue.textContent = defaultvalue + 'x' + defaultvalue;
@@ -37,6 +38,7 @@ function board(size) {
     }
 }
 
+;
 
 function color(pixel) {
     pixel.addEventListener("mousedown", crayon);
@@ -47,15 +49,50 @@ function color(pixel) {
 
 
 function crayon(event) {
-    event.target.style.backgroundColor = shade;
+    console.log(pattern)
+    const cellules = document.querySelectorAll('.pix')
+    if (pattern == 'Rainbow') {
+        function mix() {
+            return Math.floor(Math.random() * 255);
+        }
+        let rainbo = 'rgba(' + mix() + ',' + mix() + ',' + mix() + ')'
+
+        event.target.style.backgroundColor = rainbo
+        event.target.style.opacity = ''
+    } else if (pattern == 'Shadow') {
+        event.target.style.backgroundColor = 'black'
+
+        console.log('fon1' + event.target.style.opacity)
+
+        let opacity = Number(event.target.style.opacity);
+        if (isNaN(opacity)) opacity = 0;
+        opacity += 0.1;
+        event.target.style.opacity = opacity;
+        console.log('fon2' + event.target.style.opacity)
+    } else {
+        event.target.style.opacity='';
+        event.target.style.backgroundColor = shade
+        console.log(event.target.style.opacity)
+    }
 }
 
 const buttons = document.querySelectorAll('.button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        pattern = 'classic'
         shade = button.id;
     });
 });
+
+const rainbow = document.querySelector('.rainbow')
+rainbow.addEventListener('click', () => {
+    pattern = 'Rainbow';
+})
+const shadow = document.querySelector('.shadow')
+shadow.addEventListener('click', () => {
+    pattern = 'Shadow'
+});
+
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', clean)
@@ -64,29 +101,29 @@ function clean() {
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
         pixel.style.backgroundColor = 'white'
-      
+        pixel.style.opacity='';
     });
 }
 
 
 const quadrillage = document.querySelector('#quadri')
 quadrillage.addEventListener('click', () => {
-    
+
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
         if (pixel.style.border == '1px solid white') {
             pixel.style.border = '1px solid rgba(0, 0, 0, 0.527)'
-            quadrillage.innerHTML='Quadrillage : On'
-          
+            quadrillage.innerHTML = 'Quadrillage : On'
+
         }
         else {
-            pixel.style.border='1px solid white';
-            quadrillage.innerHTML='Quadrillage : Off'
-        
+            pixel.style.border = '1px solid white';
+            quadrillage.innerHTML = 'Quadrillage : Off'
+
         }
     });
- 
-    })
+
+})
 
 
 
