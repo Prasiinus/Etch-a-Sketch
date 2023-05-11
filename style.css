@@ -16,7 +16,7 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(114, 114, 114, 0.584);
+    background-color: rgba(116, 116, 116, 0.137);
     border-radius: 20px;
     padding: 10px;
 }
@@ -31,8 +31,10 @@ body
     flex:1;
 }
 .pix {
-    border: 1px solid rgba(0, 0, 0, 0.527);
+     border: 0.1px solid rgba(0, 0, 0, 0.979);
 }
+
+
 
 .container>div>div:hover {
    background-color: rgba(7, 255, 255, 0.381);
@@ -47,6 +49,7 @@ body
     width: 40vw;
     height: 40vw;
     border: 1px solid rgba(0, 0, 0, 0.527);
+    background-color: rgb(255, 255, 255);
 }
 
 .ddl 

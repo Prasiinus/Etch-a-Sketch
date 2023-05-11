@@ -49,30 +49,33 @@ function color(pixel) {
 
 
 function crayon(event) {
-    console.log(pattern)
-    const cellules = document.querySelectorAll('.pix')
     if (pattern == 'Rainbow') {
         function mix() {
             return Math.floor(Math.random() * 255);
         }
         let rainbo = 'rgba(' + mix() + ',' + mix() + ',' + mix() + ')'
-
-        event.target.style.backgroundColor = rainbo
         event.target.style.opacity = ''
+        event.target.style.backgroundColor = rainbo
     } else if (pattern == 'Shadow') {
-        event.target.style.backgroundColor = 'black'
+        let opacity = Number(event.target.style.opacity);
 
-        console.log('fon1' + event.target.style.opacity)
+        if (event.target.style.backgroundColor == 'black') {
+            opacity += 0.1;
+            event.target.style.opacity = opacity;
+        }
+        else {
+            event.target.style.backgroundColor = 'black';
+            event.target.style.opacity = 0.1;
+        }
+    } else if (pattern == 'estompe') {
 
         let opacity = Number(event.target.style.opacity);
-        if (isNaN(opacity)) opacity = 0;
-        opacity += 0.1;
+        if (event.target.style.opacity == '') opacity = 1;
+        if (opacity >= 0.1) opacity -= 0.1;
         event.target.style.opacity = opacity;
-        console.log('fon2' + event.target.style.opacity)
     } else {
-        event.target.style.opacity='';
+        event.target.style.opacity = ''
         event.target.style.backgroundColor = shade
-        console.log(event.target.style.opacity)
     }
 }
 
@@ -93,6 +96,11 @@ shadow.addEventListener('click', () => {
     pattern = 'Shadow'
 });
 
+const estompe = document.querySelector('.estompe')
+estompe.addEventListener('click', () => {
+    pattern = 'estompe'
+});
+
 
 const clear = document.querySelector('#clear')
 clear.addEventListener('click', clean)
@@ -101,7 +109,7 @@ function clean() {
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
         pixel.style.backgroundColor = 'white'
-        pixel.style.opacity='';
+        pixel.style.opacity = '';
     });
 }
 
@@ -111,13 +119,13 @@ quadrillage.addEventListener('click', () => {
 
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
-        if (pixel.style.border == '1px solid white') {
-            pixel.style.border = '1px solid rgba(0, 0, 0, 0.527)'
+        if (pixel.style.border == '0px solid white') {
+            pixel.style.border = '0.1px solid rgba(0, 0, 0, 0.563)'
             quadrillage.innerHTML = 'Quadrillage : On'
 
         }
         else {
-            pixel.style.border = '1px solid white';
+            pixel.style.border = '0px solid white';
             quadrillage.innerHTML = 'Quadrillage : Off'
 
         }
@@ -156,7 +164,7 @@ downloadBtn.addEventListener('click', () => {
             // Ces deux lignes utilisent la méthode "Array.from" pour convertir les nœuds enfants de "container" en un tableau d'éléments DOM.
             //  Ensuite, deux boucles imbriquées sont utilisées pour parcourir chaque pixel dans la grille.
 
-            const { backgroundColor } = pixel.style
+            const { backgroundColor, opacity } = pixel.style
             // Cette ligne récupère la couleur de fond du pixel en cours de traitement.
 
             const x = colIndex * pixelSize;
@@ -165,8 +173,10 @@ downloadBtn.addEventListener('click', () => {
             // Ces deux lignes calculent les coordonnées X et Y du pixel en cours de traitement.
 
             ctx.fillStyle = backgroundColor;
+            ctx.globalAlpha = opacity || 1;
             ctx.fillRect(x, y, pixelSize, pixelSize);
             // Ces deux lignes utilisent le contexte de dessin 2D pour dessiner un rectangle rempli avec la couleur de fond du pixel en cours de traitement.
+            ctx.globalAlpha = 1;
         });
     });
 
