@@ -17,15 +17,13 @@
     <main>
         <div class="dashboard">
             <div class="left">
-                <button id='red' class="button">Red</button>
-                <button id='blue' class="button">Blue</button>
-                <button id='yellow' class="button">Yellow</button><br>
-                <button id='black' class="button">Black</button>
-                <button class="shadow">Shadow</button>
-                <button class="rainbow">Rainbow</button><br>
+                <button id='red' class="actbtn button analogbutton red"></button>
+                <button id='blue' class="actbtn button analogbutton blue"></button>
+                <button id='yellow' class="actbtn button analogbutton yellow"></button><br>
+                <button id='black' class="actbtn button analogbutton black"></button>
+                <button class="actbtn shadow analogbutton"></button>
+                <button class="actbtn rainbow analogbutton"></button><br>
 
-                <button id='white' class="button">Gomme</button>
-                <button class="estompe">Estompe</button><br>
                 <input class="range" type="range" min="0" max="3" value="1">
                 <p class="inputvalue"></p>
 
@@ -33,13 +31,18 @@
             <div class="container"></div>
 
             <div class="right">
-                <button id="quadri">Quadrillage : On</button>
-                <button id='clear'>Clear All</button>
+                <button id='white' class="actbtn button analogbutton white"></button>
+                <button class="actbtn estompe analogbutton"></button><br>
+                <button id="quadri" class="white">Quadrillage : On</button>
+                <button id='clear' class="white">Clear All</button>
+        
+               
             </div>
         </div>
         <div class="ddl"><button id="download">Télécharger</button></div>
     </main>
     <footer></footer>
 </body>
+
 
 </html>

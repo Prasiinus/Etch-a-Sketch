@@ -2,6 +2,18 @@ const Container = document.querySelector('.container');
 const range = document.querySelector('.range');
 const inputvalue = document.querySelector('.inputvalue')
 
+const paint = document.querySelectorAll('.actbtn')
+paint.forEach((color) => {
+    color.addEventListener('click', () => {
+        const activeButton = document.querySelector('.actbtn.active');
+        if (activeButton) {
+          activeButton.classList.remove('active');
+        }
+        color.classList.add('active');
+      });
+    })
+
+
 const validsize = [8, 16, 32, 64];
 const defaultvalue = validsize[range.value];
 
@@ -61,7 +73,8 @@ function crayon(event) {
 
         if (event.target.style.backgroundColor == 'black') {
             opacity += 0.1;
-            event.target.style.opacity = opacity;
+            event.target.style.opacity = opacity >= 1 ? 1 : opacity;
+            console.log(event.target.style.opacity)
         }
         else {
             event.target.style.backgroundColor = 'black';
@@ -72,8 +85,13 @@ function crayon(event) {
         let opacity = Number(event.target.style.opacity);
         if (event.target.style.opacity == '') opacity = 1;
         if (opacity >= 0.1) opacity -= 0.1;
+        if (opacity == 0 ||event.target.style.backgroundColor == 'white') {
+            event.target.style.backgroundColor = 'white'
+            opacity = 1
+        }
         event.target.style.opacity = opacity;
-    } else {
+        console.log(event.target.style.opacity)
+      } else {
         event.target.style.opacity = ''
         event.target.style.backgroundColor = shade
     }
@@ -120,7 +138,7 @@ quadrillage.addEventListener('click', () => {
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
         if (pixel.style.border == '0px solid white') {
-            pixel.style.border = '0.1px solid rgba(0, 0, 0, 0.563)'
+            pixel.style.border = '0.1px solid rgb(175, 173, 173)'
             quadrillage.innerHTML = 'Quadrillage : On'
 
         }

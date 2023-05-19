@@ -5,13 +5,14 @@
 header {
     display: flex;
     justify-content: center;
-    
+
 }
-body 
-{
+
+body {
     height: 100vh;
     margin: 0;
 }
+
 .dashboard {
     display: flex;
     align-items: center;
@@ -23,27 +24,27 @@ body
 
 .raw {
     display: flex;
-    flex:1;
+    flex: 1;
 }
 
-.raw>div
-{
-    flex:1;
+.raw>div {
+    flex: 1;
 }
+
 .pix {
-     border: 0.1px solid rgba(0, 0, 0, 0.979);
+    border: 0.1px solid rgb(175, 173, 173);
 }
 
 
 
 .container>div>div:hover {
-   background-color: rgba(7, 255, 255, 0.381);
-   cursor: crosshair;
+    background-color: rgba(7, 255, 255, 0.381);
+    cursor: crosshair;
 
 }
 
 
-.container { 
+.container {
     display: flex;
     flex-direction: column;
     width: 40vw;
@@ -52,10 +53,89 @@ body
     background-color: rgb(255, 255, 255);
 }
 
-.ddl 
-{
+.ddl {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
 }
+
+
+.analogbutton {
+    width: 10vw;
+    height: 10vh;
+    margin: 0 auto;
+    border: none;
+    transition: transform 200ms, box-shadow 200ms;
+}
+
+/* .analogbutton:active {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #094c66 0px 0px 0px;
+} */
+
+.analogbutton.active {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #094c66 0px 0px 0px;
+}
+
+.red {
+    background-color: red;
+    box-shadow: rgb(134, 4, 4) 3px 3px 0px;
+}
+
+.blue {
+    background-color: blue;
+    box-shadow: rgb(2, 2, 155) 3px 3px 0px;
+}
+
+.yellow {
+    background-color: yellow;
+    box-shadow: rgb(209, 192, 2) 3px 3px 0px;
+}
+
+.black {
+    background-color: black;
+    box-shadow: rgb(89, 89, 89) 3px 3px 0px;
+    color: white;
+}
+
+.shadow {
+    background: linear-gradient(90deg, #ffffff, #000000);
+    box-shadow: rgb(89, 89, 89) 3px 3px 0px;
+    color: white;
+}
+
+.rainbow {
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: rgb(89, 89, 89) 3px 3px 0px;
+    color: white;
+}
+.estompe {
+
+    background: linear-gradient(130deg, rgb(146, 144, 144) 0%,rgb(228, 226, 226) 50%, rgb(255, 255, 255) 100%);
+    box-shadow: rgb(89, 89, 89) 3px 3px 0px;
+    color: white;
+}
+.white {
+    background: white;
+    box-shadow: rgb(89, 89, 89) 3px 3px 0px;
+    
+}
+
+.analogbutton
+{  
+    width: 10vh;
+    height: 10vh;
+    border: none;
+    border-radius: 30px;
+}
+
+* {
+    border: 1px solid black;
+}
+
+
+
+
+
