@@ -1,25 +1,64 @@
-/* * {
-    border: 1px solid coral;
-} */
-
-header {
-    display: flex;
-    justify-content: center;
-
+* {
+    border: 1px solid rgb(0, 0, 0);
 }
+
+
 
 body {
     height: 100vh;
-    margin: 0;
+    border: 1px solid coral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre {
+    font-family: 'Darumadrop One';
+    font-size: 35px;
+    color: white;
+
 }
 
 .dashboard {
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(116, 116, 116, 0.137);
+    border-radius: 20px;
+    box-shadow: rgb(89, 89, 89) 4px 2px 0px;
+    border: 1px solid rgb(118, 80, 255);
+}
+
+.dashboardcontent {
+    height: auto;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left, .right {
+    width: 25vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+    min-width: 65vh;
+    border: 1px solid rgba(0, 0, 0, 0.527);
+    background-color: rgb(255, 255, 255);
+}
+
+.ddl {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(116, 116, 116, 0.137);
-    border-radius: 20px;
-    padding: 10px;
+  
 }
 
 .raw {
@@ -32,7 +71,7 @@ body {
 }
 
 .pix {
-    border: 0.1px solid rgb(175, 173, 173);
+    border: 0.1px solid rgb(127, 127, 127);
 }
 
 
@@ -44,35 +83,17 @@ body {
 }
 
 
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    height: 40vw;
-    border: 1px solid rgba(0, 0, 0, 0.527);
-    background-color: rgb(255, 255, 255);
-}
 
-.ddl {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
 
 
 .analogbutton {
-    width: 10vw;
-    height: 10vh;
+    width: 6vh;
+    height: 6vh;
     margin: 0 auto;
     border: none;
+    border-radius: 30px;
     transition: transform 200ms, box-shadow 200ms;
 }
-
-/* .analogbutton:active {
-    transform: translateY(4px) translateX(4px);
-    box-shadow: #094c66 0px 0px 0px;
-} */
 
 .analogbutton.active {
     transform: translateY(4px) translateX(4px);
@@ -111,28 +132,16 @@ body {
     box-shadow: rgb(89, 89, 89) 3px 3px 0px;
     color: white;
 }
+
 .estompe {
 
-    background: linear-gradient(130deg, rgb(146, 144, 144) 0%,rgb(228, 226, 226) 50%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(130deg, rgb(146, 144, 144) 0%, rgb(228, 226, 226) 50%, rgb(255, 255, 255) 100%);
     box-shadow: rgb(89, 89, 89) 3px 3px 0px;
     color: white;
 }
+
 .white {
     background: white;
     box-shadow: rgb(89, 89, 89) 3px 3px 0px;
-    
+
 }
-
-.analogbutton
-{  
-    width: 10vh;
-    height: 10vh;
-    border: none;
-    border-radius: 30px;
-}
-
-
-
-
-
-
