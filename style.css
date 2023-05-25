@@ -3,10 +3,12 @@
 } */
 
 body {
+    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .titre {
@@ -21,6 +23,7 @@ body {
 .dashboard {
     height: 90vh;
     width: 90vw;
+    margin-top: 3vh;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -45,7 +48,7 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 20vw;
     height: 10vh;
-    background: linear-gradient(to right, #b4ecc2 0%, #7dff8e 100%);
+    background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(46, 204, 113, 1) 100%);
     background-size: 20vw 8px;
     background-position: center;
     background-repeat: no-repeat;
@@ -59,7 +62,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
     border-radius: 2px;
-    background: #9df07b;
+    background: rgb(46, 204, 113);
     position: relative;
     z-index: 3;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
@@ -67,7 +70,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .inputvalue {
     font-family: 'Darumadrop One';
-    color: rgb(138, 138, 138);
+    color: rgb(255, 255, 255);
     filter: drop-shadow(1px 1px 0px black);
     margin: 0;
 }
@@ -99,7 +102,6 @@ gap: 2vh;
     align-items: center;
     justify-content: center;
     margin-bottom: 2vh;
-
 }
 
 .raw {
@@ -140,9 +142,10 @@ gap: 2vh;
 }
 
 .squaredbutt {
-   background-color: rgb(228, 106, 106);
+   background-color: rgb(46, 204, 113);
     box-shadow: 2px 2px 0px rgb(69, 62, 62);
     display: flex;
+    color: #ffffff;
 }
 
 .gridclean {
@@ -162,7 +165,7 @@ gap: 2vh;
         'wght' 400,
         'GRAD' 0,
         'opsz' 48;
-
+color: #ffffff;
 }
 
 
@@ -206,4 +209,32 @@ gap: 2vh;
     background: white;
     box-shadow: rgb(89, 89, 89) 2px 2px;
 
+}
+
+
+
+footer {
+    margin: 0;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: tomato;
+    font-size: inherit;
+    flex: 1 1 auto;
+    font-size: 10px;
+    font-family: 'Slackside One', cursive;
+}
+.fa-github {
+    color:tomato;
+    font-size: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+  
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  .z3{
+    margin: auto;
+    z-index: 3;
 }
