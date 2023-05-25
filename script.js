@@ -134,12 +134,11 @@ function clean() {
 
 const quadrillage = document.querySelector('#quadri')
 quadrillage.addEventListener('click', () => {
-
     const pixels = document.querySelectorAll('.pix')
     pixels.forEach(pixel => {
         if (pixel.style.border == '0px solid white') {
             pixel.style.border = '0.1px solid rgb(175, 173, 173)'
-            quadrillage.innerHTML = '<img src="img/grid_off_FILL0_wght400_GRAD0_opsz48.svg" alt="grid_off">'
+        quadrillage.innerHTML = '<img src="img/grid_off_FILL0_wght400_GRAD0_opsz48.svg" alt="grid_off">'
 
         }
         else {
