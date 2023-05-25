@@ -47,7 +47,7 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 20vw;
     height: 10vh;
-    background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(46, 204, 113, 1) 100%);
+    background: linear-gradient(to right, rgb(46, 204, 113) 0%, rgba(46, 204, 113, 1) 100%);
     background-size: 20vw 8px;
     background-position: center;
     background-repeat: no-repeat;
