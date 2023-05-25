@@ -8,7 +8,8 @@
     <title>Etch a Sketch</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Rubik+Pixels&family=Sigmar&family=Titan+One&family=VT323&display=swap');
     </style>
@@ -16,35 +17,45 @@
 
 <body>
     <main>
-         <div class="dashboard">
+        <div class="dashboard">
 
             <div class="titre">Etch a Sketch</div>
 
             <div class="dashboardcontent">
 
                 <div class="left">
-                    <button id='red' class="actbtn button analogbutton red"></button>
-                    <button id='blue' class="actbtn button analogbutton blue"></button>
-                    <button id='yellow' class="actbtn button analogbutton yellow"></button><br>
-                    <button id='black' class="actbtn button analogbutton black"></button>
-                    <button class="actbtn shadow analogbutton"></button>
-                    <button class="actbtn rainbow analogbutton"></button><br>
-
+                    <div>
+                        <button id='red' class="actbtn button analogbutton red"></button>
+                        <button id='blue' class="actbtn button analogbutton blue"></button>
+                        <button id='yellow' class="actbtn button analogbutton yellow"></button>
+                        <button id='black' class="actbtn button analogbutton black"></button>
+                        <button class="actbtn shadow analogbutton"></button>
+                        <button class="actbtn rainbow analogbutton"></button>
+                    </div>
+                    <div>
                     <input class="range" type="range" min="0" max="3" value="1">
+                </div>
+                    <div>
                     <p class="inputvalue"></p>
+                </div>
 
                 </div>
                 <div class="container"></div>
 
                 <div class="right">
-                    <button id='white' class="actbtn button analogbutton white"></button>
-                    <button class="actbtn estompe analogbutton"></button><br>
-                    <button id="quadri" class="white squaredbutt">
-                        <span class="material-symbols-outlined">grid_off</span>
-                    </button>
-                    <button id='clear' class="white squaredbutt"><span class="material-symbols-outlined">
-                        delete
-                        </span></button>
+                    <div>
+                        <button id='white' class="actbtn button analogbutton white"></button>
+                        <button class="actbtn estompe analogbutton"></button><br>
+                    </div>
+                    <div class="gridclean">
+                        <button id="quadri" class="white squaredbutt">
+                            <span class="material-symbols-outlined">grid_off</span>
+                        </button>
+                        <button id='clear' class="white squaredbutt"><span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="ddl"><button id=download class="squaredbutt">Save</button></div>

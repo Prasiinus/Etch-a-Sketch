@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(116, 116, 116, 0.137);
+    background-color: tomato;
     border-radius: 20px;
     box-shadow: rgb(89, 89, 89) 4px 2px 0px;
     border: 1px solid rgb(158, 71, 76);
@@ -45,9 +45,8 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 20vw;
     height: 10vh;
-    margin-top: 20px;
     background: linear-gradient(to right, #b4ecc2 0%, #7dff8e 100%);
-    background-size: 20vw 4vh;
+    background-size: 20vw 8px;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -57,8 +56,8 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 6vh;
-    height: 6vh;
+    width: 15px;
+    height: 15px;
     border-radius: 2px;
     background: #9df07b;
     position: relative;
@@ -68,14 +67,22 @@ input[type="range"]::-webkit-slider-thumb {
 
 .inputvalue {
     font-family: 'Darumadrop One';
-    color: white;
+    color: rgb(138, 138, 138);
     filter: drop-shadow(1px 1px 0px black);
-
+    margin: 0;
 }
 
 .left,
 .right {
+    min-height: 65vh;
     width: 25vw;
+    display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+gap: 2vh;
+
+
 }
 
 .container {
@@ -94,7 +101,6 @@ input[type="range"]::-webkit-slider-thumb {
     margin-bottom: 2vh;
 
 }
-
 
 .raw {
     display: flex;
@@ -118,37 +124,45 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
-.analogbutton, .squaredbutt  {
+.analogbutton,
+.squaredbutt {
     margin: 0 auto;
     border: none;
     border-radius: 3px;
     transition: transform 200ms, box-shadow 200ms;
-    
+
 }
-.analogbutton
-{
+
+.analogbutton {
     width: 6vh;
     height: 6vh;
     border-radius: 30px;
 }
 
 .squaredbutt {
-    background-color: rgb(228, 106, 106);
+   background-color: rgb(228, 106, 106);
     box-shadow: 2px 2px 0px rgb(69, 62, 62);
+    display: flex;
 }
 
-.analogbutton.active, .squaredbutt:active {
+.gridclean {
+    display: flex;
+    gap: 2vw;
+}
+.analogbutton.active,
+.squaredbutt:active {
     transform: translateY(2px) translateX(2px);
     box-shadow: #094c66 0px 0px 0px;
 }
 
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+
 }
 
 
@@ -178,16 +192,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .rainbow {
-    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+    background: linear-gradient(217deg, rgb(255, 0, 0), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgb(0, 255, 0), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgb(0, 0, 255), rgba(0, 0, 255, 0) 70.71%);
     box-shadow: rgb(89, 89, 89) 2px 2px 0px;
-    color: white;
 }
 
 .estompe {
 
     background: linear-gradient(130deg, rgb(146, 144, 144) 0%, rgb(228, 226, 226) 50%, rgb(255, 255, 255) 100%);
     box-shadow: rgb(89, 89, 89) 2px 2px 0px;
-    color: white;
 }
 
 .white {
@@ -195,5 +207,3 @@ input[type="range"]::-webkit-slider-thumb {
     box-shadow: rgb(89, 89, 89) 2px 2px;
 
 }
-
-
