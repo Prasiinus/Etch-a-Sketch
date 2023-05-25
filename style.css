@@ -13,11 +13,10 @@ body {
 
 .titre {
     font-family: 'Darumadrop One';
-    font-size: x-large;
     color: white;
     margin-top: 2vh;
     filter: drop-shadow(1px 1px 1px black);
-
+    font-size: 10vh;
 }
 
 .dashboard {
@@ -73,6 +72,7 @@ input[type="range"]::-webkit-slider-thumb {
     color: rgb(255, 255, 255);
     filter: drop-shadow(1px 1px 0px black);
     margin: 0;
+    font-size: 6vh;
 }
 
 .left,
@@ -146,6 +146,8 @@ gap: 2vh;
     box-shadow: 2px 2px 0px rgb(69, 62, 62);
     display: flex;
     color: #ffffff;
+    font-size: 20vh;
+    margin-top: 1vh;
 }
 
 .gridclean {
@@ -157,17 +159,6 @@ gap: 2vh;
     transform: translateY(2px) translateX(2px);
     box-shadow: #094c66 0px 0px 0px;
 }
-
-
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48;
-color: #ffffff;
-}
-
 
 .red {
     background-color: rgb(255, 0, 0);
@@ -238,3 +229,11 @@ footer {
     margin: auto;
     z-index: 3;
 }
+
+img {
+    height: 6vh;
+    width: 6vh;
+    color: #ffffff;
+    filter: invert(100%) sepia(9%) saturate(7486%) hue-rotate(177deg) brightness(111%) contrast(103%);
+}
+

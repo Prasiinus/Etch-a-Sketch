@@ -139,12 +139,12 @@ quadrillage.addEventListener('click', () => {
     pixels.forEach(pixel => {
         if (pixel.style.border == '0px solid white') {
             pixel.style.border = '0.1px solid rgb(175, 173, 173)'
-            quadrillage.innerHTML = '<span class="material-symbols-outlined">grid_off</span>'
+            quadrillage.innerHTML = '<img src="img/grid_off_FILL0_wght400_GRAD0_opsz48.svg" alt="grid_off">'
 
         }
         else {
             pixel.style.border = '0px solid white';
-            quadrillage.innerHTML = '<span class="material-symbols-outlined">grid_on</span>'
+            quadrillage.innerHTML = '<img src="img/grid_on_FILL0_wght400_GRAD0_opsz48.svg" alt="grid_on">'
         }
     });
 
