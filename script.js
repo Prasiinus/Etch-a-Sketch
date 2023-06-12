@@ -158,22 +158,23 @@ quadrillage.addEventListener('click', () => {
 
 const downloadBtn = document.querySelector('#download');
 downloadBtn.addEventListener('click', () => {
+    const outputSize = 800; // Taille de sortie souhaitée en pixels
     const canvas = document.createElement('canvas');
     const container = document.querySelector('.container');
     const containerRect = container.getBoundingClientRect();
     // Ces deux lignes sélectionnent l'élément "container"  et récupèrent sa taille et sa position sur la page.
 
-    const pixelSize = containerRect.width / container.children.length;
+    const pixelSize = outputSize  / container.children.length;
     // Cette ligne calcule la taille en pixels de chaque pixel dans la grille en divisant la largeur du
     //  conteneur par le nombre de pixels dans une rangée.
 
-    canvas.width = containerRect.width;
-    canvas.height = containerRect.height;
+    canvas.width = outputSize;
+    canvas.height = containerRect.height / containerRect.width * outputSize;
     // Ces deux lignes définissent la largeur et la hauteur du canvas pour qu'elles correspondent à la taille du conteneur.
+
 
     const ctx = canvas.getContext('2d');
     // Cette ligne crée un contexte de dessin 2D pour le canvas.
-    
     ctx.fillStyle = '#FFFFFF'; // Définir la couleur de fond sur blanc
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Dessiner un rectangle blanc couvrant tout le canvas
 
