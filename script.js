@@ -173,6 +173,9 @@ downloadBtn.addEventListener('click', () => {
 
     const ctx = canvas.getContext('2d');
     // Cette ligne crée un contexte de dessin 2D pour le canvas.
+    
+    ctx.fillStyle = '#FFFFFF'; // Définir la couleur de fond sur blanc
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Dessiner un rectangle blanc couvrant tout le canvas
 
     Array.from(container.children).forEach((row, rowIndex) => {
         Array.from(row.children).forEach((pixel, colIndex) => {
@@ -200,7 +203,7 @@ downloadBtn.addEventListener('click', () => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'MyDrawN0.png';
+        a.download = 'MyDrawN0.jpg';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
